@@ -1,0 +1,18 @@
+USE PFDA;
+CREATE TABLE movies_year(movieID int, title VARCHAR(200), genre VARCHAR(200));
+LOAD DATA LOCAL INFILE 'movies.csv' INTO TABLE movies_year FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
+
+CREATE TABLE movies_year(movieID int, title VARCHAR(200), genre VARCHAR(200), year int);
+LOAD DATA LOCAL INFILE 'movies_year.csv' INTO TABLE movies_year FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
+
+CREATE TABLE ratings(userID int, movieID int, rating float);
+LOAD DATA LOCAL INFILE 'ratings.csv' INTO TABLE movies_year FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
+
+CREATE TABLE tags(userID int, movieID int, tag VARCHAR(200));
+LOAD DATA LOCAL INFILE 'tags.csv' INTO TABLE movies_year FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
+
+CREATE TABLE genome_tags(tag_id int, tag VARCHAR(200));
+LOAD DATA LOCAL INFILE 'genome_tags.csv' INTO TABLE movies_year FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
+
+CREATE TABLE genome_scores1(movieID int, tagID int, relevance double);
+LOAD DATA LOCAL INFILE 'genome-scores1.csv' INTO TABLE movies_year FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
